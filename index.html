@@ -1,0 +1,245 @@
+<!doctype html>
+<title>mercele</title>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: poppins, sans-serif;
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        margin: 0;
+        background: #f0f2f7;
+    }
+
+    #main {
+        display: flex;
+        flex: 1;
+    }
+
+    #main > article {
+        flex: 1;
+    }
+
+    #main > nav,
+    #main > aside {
+        flex: 0 0 12vw;
+    }
+
+    #main > nav {
+        order: -1;
+    }
+
+
+    header {
+    }
+
+    footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 2rem;
+    }
+
+    article {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    nav {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .card {
+        flex-direction: column;
+        justify-content: flex-start;
+        display: flex;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.1) 10px 10px 20px;
+        border-radius: 10px;
+        padding: 50px 100px;
+    }
+
+    header, footer, article, nav, aside {
+        padding: 1em;
+    }
+
+
+    .header-title {
+        font-weight: bold;
+        text-align: center;
+        font-size: 2.5em;
+        color: #312e2e;
+    }
+
+    .disclaimer {
+        width: 40%;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+    }
+
+    .disclaimer-text, .disclaimer-title {
+        color: #7a7777;
+
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .row {
+        flex-direction: row;
+    }
+
+    .col {
+        flex-direction: column;
+    }
+
+    .center {
+        justify-content: center;
+    }
+
+    .width-45 {
+        width: 47.5%;
+    }
+
+    input, textarea, select {
+        border-radius: 15px;
+        background-clip: border-box;
+        padding: 10px 15px;
+        background-color: #f5f8fa;
+        border: 1px solid #cbd6e2;
+        margin-bottom: 1rem;
+    }
+
+    label {
+        margin-bottom: 5px;
+    }
+
+    .submit-button {
+        max-width: 6rem;
+        background: #3c72f3;
+        background-color: #3c72f3;
+        border: 1px solid #3c72f3;
+        border-radius: 15px;
+        font-weight: bolder;
+        padding: 0.5rem;
+        font-size: 12px;
+        color: white;
+        line-height: 12px;
+    }
+
+    .hidden {
+        visibility: hidden;
+    }
+
+    .no-margin {
+        margin: 0;
+    }
+
+    .space-between {
+        justify-content: space-between;
+    }
+
+    .navigation-button {
+        margin-right: 9rem;
+        font-weight: bold;
+        background: none;
+        border: none;
+
+        font-size: 2rem;
+    }
+
+    .navigation-button:hover {
+        color: #9c9ea1;
+    }
+    .margin-15{
+        margin: 1rem;
+    }
+    .max-width{
+        max-width: 1000px;
+    }
+</style>
+
+
+<body>
+<header>
+    <h1 class="header-title">mercele</h1>
+</header>
+
+<div id="main">
+    <article>
+        <div class="flex col margin-15 max-width">
+
+            <div class="card space-between">
+                <h2 class="center">Our Mission</h2>
+                <h1>Be your business companion when traveling</h1>
+                <p>
+                    Founded in 2018 by three university friends in Manchester (United Kingdom), mercele has since been on
+                    course to be a leading accommodation partner to businesses around the world.
+                    We are focused on reshaping the way companies approach business travel. We provide booking services
+                    and hotel accommodation worldwide, finding the cheapest and best locations. Choose your
+                    environmental profile, your priorities, and we will tailor and present the best trip alternatives.
+                    mercele's mission is to become your companion to experience the ultimate way of traveling.
+                </p>
+
+
+            </div>
+        </div>
+        <div class="flex col margin-15 max-width">
+            <div class="flex card">
+                <h2 class="center">Contact Us</h2>
+                <label for="email">Email</label><input id="email" type="text" required></input>
+                <div id="name-fields" class="flex row space-between">
+                    <div class="flex col  width-45">
+                        <label for="email">First Name</label><input id="firstname" type="text"></input>
+                    </div>
+                    <div class="flex col width-45">
+                        <label for="email">Last Name</label><input id="lastname" type="text"></input>
+                    </div>
+                </div>
+                <label for="phone">Phone</label><input id="phone" type="text"></input>
+                <label for="subject">Subject</label><select id="subject" required>
+                <option disabled value="">Please select</option>
+                <option value="Sales">Sales</option>
+                <option value="Sales">Enterprise Pricing</option>
+                <option value="Sales">Support</option>
+            </select>
+                <label for="message">Message</label><textarea id="message" cols="20" required></textarea>
+                <div class="flex row ">
+                    <button class="submit-button" id="submit-btn">Submit</button>
+                    <h3 id="submit-text" class="hidden no-margin">Thank you for submitting, we will contact you
+                        shortly.</h3>
+                </div>
+
+            </div>
+        </div>
+
+    </article>
+
+</div>
+<footer>
+    <div class="disclaimer">
+        <p class="disclaimer-text">email: sales@mercele.com</p>
+        <p class="disclaimer-text">phone: +44 824 94 114</p>
+    </div>
+
+</footer>
+
+</body>
+<script>
+    document.getElementById("submit-btn").addEventListener("click", () => {
+        document.getElementById("submit-text").classList.remove("hidden")
+    })
+
+    document.getElementById("about-btn").addEventListener("click", () => {
+        window.location = "/about"
+    })
+
+</script>
